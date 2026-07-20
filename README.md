@@ -16,7 +16,7 @@
 
 ### Main Generation Control Array
 <!-- Replace this placeholder URL with your real cropped screenshot once uploaded to GitHub -->
-![Scanline Workspace Interface](https://raw.githubusercontent.com/yourusername/scanline/main/assets/screenshots/dashboard-preview.png)
+![Scanline Workspace Interface](qr-code.png)
 
 ### 🎥 Live Matrix Engine Demo
 > **Watch Scanline in action:** Click the workspace preview below to see dynamic text encoding, error-correction scaling, and instant PNG downloads executing without page redraws.
