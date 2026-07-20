@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scanline — QR Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="shell">
+  <div class="header">
+    <div class="brand">
+      <span class="dot"></span>
+      <h1>Scanline</h1>
+    </div>
+    <span class="status" id="statusBadge">Idle</span>
+  </div>
+  <div class="tagline">Encode anything. Scan it back.</div>
+
+  <div class="workspace">
+    <div class="controls">
+      <div class="field">
+        <label for="contentInput">Content</label>
+        <textarea id="contentInput" placeholder="Paste a URL, or type any text to encode…"></textarea>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="sizeSelect">Size</label>
+          <select id="sizeSelect">
+            <option value="180">180 px</option>
+            <option value="240" selected>240 px</option>
+            <option value="320">320 px</option>
+            <option value="400">400 px</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="levelSelect">Error correction</label>
+          <select id="levelSelect">
+            <option value="L">L — basic</option>
+            <option value="M" selected>M — standard</option>
+            <option value="Q">Q — reinforced</option>
+            <option value="H">H — maximum</option>
+          </select>
+        </div>
+      </div>
+      <button class="generate-btn" id="generateBtn">Generate code</button>
+      <div class="hint" id="hint">Higher error correction survives more damage but produces a denser pattern.</div>
+    </div>
+
+    <div class="preview-panel">
+      <div class="viewfinder" id="viewfinder">
+        <div class="bracket tl"></div>
+        <div class="bracket tr"></div>
+        <div class="bracket bl"></div>
+        <div class="bracket br"></div>
+        <div class="scanline" id="scanline"></div>
+        <div id="qrcodeContainer"></div>
+        <div class="placeholder-msg" id="placeholderMsg">No code generated yet — enter content on the left and hit generate.</div>
+      </div>
+      <div class="preview-actions">
+        <button class="action-btn" id="downloadBtn" disabled>Download PNG</button>
+        <button class="action-btn" id="copyBtn" disabled>Copy content</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="history-section">
+    <div class="section-label">Contact sheet</div>
+    <div class="contact-sheet" id="contactSheet"></div>
+    <div class="empty-history" id="emptyHistory">Codes you generate will appear here for quick reuse.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
